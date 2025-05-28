@@ -1,0 +1,66 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Sort",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 41948.27,
+      "Total Cost": 42448.27,
+      "Plan Rows": 200000,
+      "Plan Width": 19,
+      "Actual Startup Time": 347.160,
+      "Actual Total Time": 373.101,
+      "Actual Rows": 200000,
+      "Actual Loops": 1,
+      "Sort Key": ["(count(*)) DESC"],
+      "Sort Method": "external merge",
+      "Sort Space Used": 6664,
+      "Sort Space Type": "Disk",
+      "Plans": [
+        {
+          "Node Type": "Aggregate",
+          "Strategy": "Hashed",
+          "Partial Mode": "Simple",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 16283.50,
+          "Total Cost": 20236.62,
+          "Plan Rows": 200000,
+          "Plan Width": 19,
+          "Actual Startup Time": 90.103,
+          "Actual Total Time": 227.690,
+          "Actual Rows": 200000,
+          "Actual Loops": 1,
+          "Group Key": ["gen1"],
+          "Planned Partitions": 4,
+          "HashAgg Batches": 5,
+          "Peak Memory Usage": 8241,
+          "Disk Usage": 3840,
+          "Plans": [
+            {
+              "Node Type": "Seq Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "table1",
+              "Alias": "table1",
+              "Startup Cost": 0.00,
+              "Total Cost": 3471.00,
+              "Plan Rows": 200000,
+              "Plan Width": 11,
+              "Actual Startup Time": 0.018,
+              "Actual Total Time": 13.749,
+              "Actual Rows": 200000,
+              "Actual Loops": 1
+            }
+          ]
+        }
+      ]
+    },
+    "Planning Time": 0.182,
+    "Triggers": [
+    ],
+    "Execution Time": 388.768
+  }
+]
